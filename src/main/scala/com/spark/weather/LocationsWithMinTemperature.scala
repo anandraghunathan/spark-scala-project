@@ -1,7 +1,8 @@
-package com.spark.mintemp
+package com.spark.weather
 
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
-import org.apache.log4j._
+
 import scala.math.min
 
 /** Find the minimum temperature by weather station */

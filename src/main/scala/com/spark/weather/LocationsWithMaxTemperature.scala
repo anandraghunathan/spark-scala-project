@@ -1,4 +1,4 @@
-package com.spark.maxtemp
+package com.spark.weather
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext

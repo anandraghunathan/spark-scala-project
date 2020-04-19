@@ -1,7 +1,7 @@
-package com.spark.friendsbyfirstname
+package com.spark.friends
 
+import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
-import org.apache.log4j._
 
 object AverageFriendsByName {
 
