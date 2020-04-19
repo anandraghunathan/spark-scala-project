@@ -1,4 +1,4 @@
-package com.spark.maxtemp
+package main.scala.com.spark.maxtemp
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext

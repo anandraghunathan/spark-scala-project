@@ -1,4 +1,4 @@
-package com.spark.mintemp
+package main.scala.com.spark.mintemp
 
 import org.apache.spark.SparkContext
 import org.apache.log4j._

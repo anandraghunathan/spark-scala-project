@@ -1,4 +1,4 @@
-package com.spark.friendsbyfirstname
+package main.scala.com.spark.friendsbyfirstname
 
 import org.apache.spark.SparkContext
 import org.apache.log4j._

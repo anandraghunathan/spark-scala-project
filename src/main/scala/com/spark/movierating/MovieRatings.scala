@@ -1,4 +1,4 @@
-package com.spark.movierating
+package main.scala.com.spark.movierating
 
 import org.apache.spark.SparkContext
 import org.apache.log4j._
