@@ -1,0 +1,5 @@
+# spark-scala-project
+.idea
+*.class
+*.log
+out/

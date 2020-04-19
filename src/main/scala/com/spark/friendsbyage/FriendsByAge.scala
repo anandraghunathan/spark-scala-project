@@ -1,4 +1,4 @@
-package main.scala.com.spark.friendsbyage
+package com.spark.friendsbyage
 
 import org.apache.spark.SparkContext
 import org.apache.log4j._
