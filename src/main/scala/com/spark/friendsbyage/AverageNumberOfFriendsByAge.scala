@@ -4,7 +4,7 @@ import org.apache.spark.SparkContext
 import org.apache.log4j._
 
 /** Compute the average number of friends by age in a social network. */
-object FriendsByAge {
+object AverageNumberOfFriendsByAge {
 
   /** A function that splits a line of input into (age, numFriends) tuples. */
   def parseLine(line: String) = {
@@ -24,10 +24,10 @@ object FriendsByAge {
     Logger.getLogger("org").setLevel(Level.ERROR)
 
     // Create a SparkContext using every core of the local machine
-    val sc = new SparkContext("local[*]", "FriendsByAge")
+    val sc = new SparkContext("local[*]", "AverageNumberOfFriendsByAge")
 
     // Load each line of the source data into an RDD
-    val lines = sc.textFile("datasets/fakefriends.csv")
+    val lines = sc.textFile("datasets/friends.csv")
 
     // Use our parseLines function to convert to (age, numFriends) tuples
     val rdd = lines.map(parseLine)

@@ -20,7 +20,7 @@ object AverageFriendsByName {
 
     val sc = new SparkContext("local[*]", "AverageFriendsByName")
 
-    val lines = sc.textFile("datasets/fakefriends.csv")
+    val lines = sc.textFile("datasets/friends.csv")
 
     val rdd = lines.map(parseLine)
 

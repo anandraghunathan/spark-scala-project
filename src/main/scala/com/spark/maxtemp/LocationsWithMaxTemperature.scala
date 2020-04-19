@@ -4,7 +4,7 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 import scala.math.max
 
-object MaxTemperatures {
+object LocationsWithMaxTemperature {
   def parseLine(line:String)= {
     val fields = line.split(",")
     val stationID = fields(0)
@@ -19,10 +19,10 @@ object MaxTemperatures {
     Logger.getLogger("org").setLevel(Level.ERROR)
 
     // Create a SparkContext using every core of the local machine
-    val sc = new SparkContext("local[*]", "MaxTemperatures")
+    val sc = new SparkContext("local[*]", "LocationsWithMaxTemperature")
 
     // Read each line of input data
-    val lines = sc.textFile("datasets/1800.csv")
+    val lines = sc.textFile("datasets/weather-data.csv")
 
     // Convert to (stationID, entryType, temperature) tuples
     val parsedLines = lines.map(parseLine)

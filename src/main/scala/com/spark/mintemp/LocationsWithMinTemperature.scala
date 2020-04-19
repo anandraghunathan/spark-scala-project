@@ -5,7 +5,7 @@ import org.apache.log4j._
 import scala.math.min
 
 /** Find the minimum temperature by weather station */
-object MinTemperatures {
+object LocationsWithMinTemperature {
 
   def parseLine(line:String)= {
     val fields = line.split(",")
@@ -21,10 +21,10 @@ object MinTemperatures {
     Logger.getLogger("org").setLevel(Level.ERROR)
 
     // Create a SparkContext using every core of the local machine
-    val sc = new SparkContext("local[*]", "MinTemperatures")
+    val sc = new SparkContext("local[*]", "LocationsWithMinTemperature")
 
     // Read each line of input data
-    val lines = sc.textFile("datasets/1800.csv")
+    val lines = sc.textFile("datasets/weather-data.csv")
 
     // Convert to (stationID, entryType, temperature) tuples
     val parsedLines = lines.map(parseLine)
