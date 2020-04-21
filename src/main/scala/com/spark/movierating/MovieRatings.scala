@@ -1,4 +1,4 @@
-package com.spark.movie
+package com.spark.movierating
 
 import org.apache.spark.SparkContext
 import org.apache.log4j._
