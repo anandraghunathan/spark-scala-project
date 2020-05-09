@@ -3,7 +3,7 @@ package com.spark.ecommerce
 import org.apache.spark.SparkContext
 import org.apache.log4j._
 
-object OrdersTotalByCustomer {
+object OrdersTotalByCustomer extends App {
 
   def getCustIdAndAmountSpent(line : String) = {
     val fields = line.split(",")
@@ -12,20 +12,20 @@ object OrdersTotalByCustomer {
 
     (custId, price)
   }
-  def main(args : Array[String]): Unit = {
-    Logger.getLogger("org").setLevel(Level.ERROR)
 
-    val sc = new SparkContext("local[*]", "OrdersTotalByCustomer")
+  Logger.getLogger("org").setLevel(Level.ERROR)
 
-    val inputLines = sc.textFile("datasets/customer-orders.csv")
+  val sc = new SparkContext("local[*]", "OrdersTotalByCustomer")
 
-    val mappedInput = inputLines.map(getCustIdAndAmountSpent)
+  val inputLines = sc.textFile("datasets/customer-orders.csv")
 
-    val ordersTotalByCustomer = mappedInput.reduceByKey((x, y) => x + y)
+  val mappedInput = inputLines.map(getCustIdAndAmountSpent)
 
-    val results = ordersTotalByCustomer.collect()
+  val ordersTotalByCustomer = mappedInput.reduceByKey((x, y) => x + y)
 
-    // Sorted by max amount spent by the customer
-    results.sortWith(_._2 > _._2).foreach(println)
-  }
+  val results = ordersTotalByCustomer.collect()
+
+  // Sorted by max amount spent by the customer
+  results.sortWith(_._2 > _._2).foreach(println)
+
 }
