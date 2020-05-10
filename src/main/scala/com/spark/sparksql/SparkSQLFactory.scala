@@ -21,7 +21,7 @@ object SparkSQLFactory extends App {
   /**
    * Questions
    *
-   * 1. Read the movies DF and store it as a Spark table in the rtjvm database.
+   * 1. Read the movies DF and store it as a Spark table in the database.
    * 2. Count how many employees were hired in between Jan 1 1999 and Jan 1 2000.
    * 3. Show the average salaries for the employees hired in between those dates, grouped by department.
    * 4. Show the name of the best-paying department for employees hired in between those dates.
@@ -81,7 +81,6 @@ object SparkSQLFactory extends App {
     "salaries",
     "dept_manager")
   )
-
 
   // 2 - Count how many employees were hired in between Jan 1 1999 and Jan 1 2000.
   val countEmployees = spark.sql(
